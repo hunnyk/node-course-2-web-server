@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
         welcomemessage:"Welcome to the home page",
         //currentyear:new Date().getFullYear()
     });
-})
+});
 
 app.get('/about', function (req, res) {
     //res.send('About Page');
@@ -46,7 +46,14 @@ app.get('/about', function (req, res) {
         pagetitle:"About Page",
         currentyear:new Date().getFullYear()
     });
-})
+});
+
+app.get('/projects',function(req,res){
+    res.render('projects.hbs',{
+        pagetitle:"Project Page",
+        projectmessage:"Dsiplay aLl projects"
+    });
+});
 
 // /bad - send back json with errorMessage
 app.get('/bad', (req, res) => {
